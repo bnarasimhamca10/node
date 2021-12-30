@@ -1,0 +1,7 @@
+sudo: requried
+services:
+  - docker
+
+script:
+  - docker build -t hinarasimha/node .
+  - docker images hinarasimha/node
