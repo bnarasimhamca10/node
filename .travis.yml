@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t hinarasimha/node .
   - docker images hinarasimha/node
+
+before_deploy:
+  - docker login hinarasimha -p sha1Nthi23$
+
+deploy:
+  provider: script
+  script: docker push hinarasimha/node
+  on:
+    branch: master
